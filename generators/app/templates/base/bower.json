@@ -1,0 +1,25 @@
+{
+    "name": "<%= model.projectName %>",
+    "description": "<%= model.projectDescription %>",
+    "version": "<%= model.projectVersion %>",
+    "dependencies": {
+    },
+	"authors": [
+    ],
+    "license": "private",
+    "private": true,
+    "ignore": [
+        "node_modules",
+        "src/bower_components",
+        "config",
+        "test",
+        "target",
+        ".*",
+        "README*",
+        "karma.conf.js",
+        "Gruntfile.js",
+        "gruntfile.js",
+        "bower.json",
+        "package.json"
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "name": "generator-project-esnow",
+    "description": "Yeoman generator to create ES next generation project (based on ES6 / ES2015, ES7 ...)",
+    "version": "0.0.1",
+    "private": false,
+    "scripts": {
+        "preinstall": "npm install -g grunt-cli bower"
+    },
+    "contributors": [
+        {
+            "name": "Julien Roche",
+            "email": "roche.jul@gmail.com"
+        }
+    ],
+    "repository": "rochejul/generator-project-esnow",
+    "main": "generators/app/index.js",
+    "files": [
+        "generators"
+    ],
+    "keywords": [ "yeoman-generator", "es6", "es7", "esnext", "esnow", "yeoman", "traceur", "6to5", "grunt" ],
+    "dependencies": {
+        "yeoman-generator": "^0.18.5"
+    },
+    "peerDependencies": {
+        "yo": ">=1.0.0",
+        "grunt": ">=0.4.5"
+    },
+    "license": "MIT",
+    "engines": {
+        "node": ">=0.10.33",
+        "npm": ">=1.4.28"
+    }
+}
