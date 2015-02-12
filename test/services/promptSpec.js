@@ -18,8 +18,8 @@ describe('prompt service tests - ', function () {
 		chai.expect(PromptService).to.exist();
 	});
 
-	describe('"convertEnumToChoices" should ', function () {
-		it('exists', function () {
+	describe('and the method "convertEnumToChoices" should ', function () {
+		it('exist', function () {
 			chai.expect(PromptService.convertEnumToChoices).to.exist();
 		});
 
@@ -37,8 +37,8 @@ describe('prompt service tests - ', function () {
         });
 	});
 
-    describe('"requiredPrompt" should ', function () {
-        it('exists', function () {
+    describe('and the method "requiredPrompt" should ', function () {
+        it('exist', function () {
             chai.expect(PromptService.requiredPrompt).to.exist();
         });
 
@@ -57,6 +57,46 @@ describe('prompt service tests - ', function () {
 
         it('return true otherwise', function () {
             chai.expect(PromptService.requiredPrompt('1.0.0')).to.be.true();
+        });
+    });
+
+    describe('and the method "semverPrompt" should ', function () {
+        it('exist', function () {
+           chai.expect(PromptService.semverPrompt).to.exist();
+        });
+
+        it('return false when we have not a valid semver value', function () {
+            chai.expect(PromptService.semverPrompt()).to.equal('You need to provide a semver value');
+            chai.expect(PromptService.semverPrompt(undefined)).to.equal('You need to provide a semver value');
+            chai.expect(PromptService.semverPrompt(null)).to.equal('You need to provide a semver value');
+            chai.expect(PromptService.semverPrompt('')).to.equal('You need to provide a semver value');
+            chai.expect(PromptService.semverPrompt('a.b.c')).to.equal('You need to provide a semver value');
+            chai.expect(PromptService.semverPrompt('1.a.0')).to.equal('You need to provide a semver value');
+        });
+
+        it('return true when we have a valid semver value', function () {
+            chai.expect(PromptService.semverPrompt('1.0.0')).to.be.true();
+            chai.expect(PromptService.semverPrompt('1.0.0-snapshot')).to.be.true();
+        });
+    });
+
+    describe('and the method "projectNamePrompt" should ', function () {
+        it('exist', function () {
+            chai.expect(PromptService.projectNamePrompt).to.exist();
+        });
+
+        it('return false when we have not a valid project name value', function () {
+            chai.expect(PromptService.projectNamePrompt()).to.equal('You need to provide a valid project name (without spaces, special characters, and in lowercase)');
+            chai.expect(PromptService.projectNamePrompt(undefined)).to.equal('You need to provide a valid project name (without spaces, special characters, and in lowercase)');
+            chai.expect(PromptService.projectNamePrompt(null)).to.equal('You need to provide a valid project name (without spaces, special characters, and in lowercase)');
+            chai.expect(PromptService.projectNamePrompt('')).to.equal('You need to provide a valid project name (without spaces, special characters, and in lowercase)');
+            chai.expect(PromptService.projectNamePrompt('a.b.c')).to.equal('You need to provide a valid project name (without spaces, special characters, and in lowercase)');
+            chai.expect(PromptService.projectNamePrompt('a b')).to.equal('You need to provide a valid project name (without spaces, special characters, and in lowercase)');
+        });
+
+        it('return true when we have a valid project name value', function () {
+            chai.expect(PromptService.projectNamePrompt('project')).to.be.true();
+            chai.expect(PromptService.projectNamePrompt('my-project')).to.be.true();
         });
     });
 });

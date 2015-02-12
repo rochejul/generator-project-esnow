@@ -15,13 +15,43 @@ describe('generator tests - ', function () {
 
     var
         APP_PATH = '../generators/app',
-        TARGET_PATH = '../target';
+        TARGET_PATH = '../target/generator-tests';
 
 	var path = require('path'),
         yeoman = require('yeoman-generator'),
         helpers = yeoman.test,
         assert = yeoman.assert,
         GeneratorModel = require('../generators/app/model');
+
+    describe('esnow generator should copy based files, like ', function () {
+        before(function (done) {
+            helpers
+                .run(path.join( __dirname, APP_PATH))
+                .inDir(path.join( __dirname, TARGET_PATH))
+                .withPrompts(new GeneratorModel().toJSON())
+                .on('end', done);
+        });
+
+        it('node files', function () {
+            assert.file(['package.json', '.npmrc']);
+        });
+
+        it('git files', function () {
+            assert.file(['.gitattributes', '.gitignore']);
+        });
+
+        it('bower files', function () {
+            assert.file(['bower.json', '.bowerrc']);
+        });
+
+        it('tests files', function () {
+            assert.file(['karma.conf.js', 'test/indexSpec.js', 'test/utils/userSpec.js']);
+        });
+
+        it('app files', function () {
+            assert.file(['src/main.js', 'src/app/index.js', 'src/app/models/user.js', 'src/app/utils/user.js']);
+        });
+    });
 
     describe('and the option "createProjectFolder" ', function () {
         describe('with the value to false should ', function () {

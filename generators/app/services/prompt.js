@@ -7,6 +7,9 @@
 'use strict';
 
 var
+    semver = require('semver');
+
+var
     /**
      * Empty char
      *
@@ -14,7 +17,16 @@ var
      * @constant
      * @type {string}
      */
-    EMPTY_CHAR = '';
+    EMPTY_CHAR = '',
+
+    /**
+     * Regular expression to check if we have a valid node project name
+     *
+     * @private
+     * @constant
+     * @type {RegExp}
+     */
+    REGEXP_PROJECT_NAME = /^[a-z0-9_-]+$/;
 
 // Export the service
 module.exports = {
@@ -46,6 +58,22 @@ module.exports = {
     },
 
     /**
+     * We want to have a valid node project name on the prompt
+     *
+     * @method
+     * @static
+     * @param {string} input
+     * @returns {boolean | string}
+     */
+    'projectNamePrompt': function (input) {
+        if (!input || !REGEXP_PROJECT_NAME.test(input)) {
+            return 'You need to provide a valid project name (without spaces, special characters, and in lowercase)';
+        }
+
+        return true;
+    },
+
+    /**
      * We want to have an input on the prompt
      *
      * @method
@@ -59,5 +87,21 @@ module.exports = {
         }
 
         return true;
+    },
+
+    /**
+     * We want to have a semver input on the prompt
+     *
+     * @method
+     * @static
+     * @param {string} input
+     * @returns {boolean | string}
+     */
+    'semverPrompt': function (input) {
+        if (semver.valid(input)) {
+            return true;
+        }
+
+        return 'You need to provide a semver value';
     }
 };

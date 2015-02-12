@@ -50,7 +50,8 @@ module.exports = yeoman.generators.Base.extend({
                 'type': 'confirm',
                 'name': 'createProjectFolder',
                 'message': 'Shall we create the project folder?',
-                'default': this.model.createProjectFolder
+                'default': this.model.createProjectFolder,
+                'validate': promptUtils.projectNamePrompt
             },
             function (answers) {
                 this.model.createProjectFolder = answers.createProjectFolder;
@@ -120,7 +121,8 @@ module.exports = yeoman.generators.Base.extend({
                 'type': 'input',
                 'name': 'projectVersion',
                 'message': 'Your project version',
-                'default': this.model.projectVersion
+                'default': this.model.projectVersion,
+                'validate': promptUtils.semverPrompt
             },
             function (answers) {
                 this.model.projectVersion = answers.projectVersion;
