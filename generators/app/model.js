@@ -6,11 +6,15 @@
 
 'use strict';
 
+var
+    _ = require('lodash');
+
 /**
  * @class GeneratorModel
  * @constructor
+ * @param {Object} [values]
  */
-function GeneratorModel () {
+function GeneratorModel (values) {
     /**
      * @property {boolean} createProjectFolder
      */
@@ -45,6 +49,10 @@ function GeneratorModel () {
      * @property {boolean} downloadDependencies
      */
     this.downloadDependencies = false;
+
+    if (values) {
+        _.extend(this, values);
+    }
 }
 
 /**

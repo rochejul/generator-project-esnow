@@ -6,6 +6,16 @@
 
 'use strict';
 
+var
+    /**
+     * Empty char
+     *
+     * @private
+     * @constant
+     * @type {string}
+     */
+    EMPTY_CHAR = '';
+
 // Export the service
 module.exports = {
     /**
@@ -16,11 +26,19 @@ module.exports = {
      */
     'convertEnumToChoices': function (enumeration) {
         var choices = [],
+            key,
             i;
 
         for (i in enumeration) {
             if (enumeration.hasOwnProperty(i)) {
-                choices.push({ 'name': enumeration[i], 'value': enumeration[i] });
+                key = enumeration[i];
+
+                if (key) {
+                    key = key.toLowerCase();
+                    key = key.charAt(0).toUpperCase() + key.slice(1);
+                }
+
+                choices.push({ 'name': key, 'value': enumeration[i] });
             }
         }
 
@@ -33,20 +51,13 @@ module.exports = {
      * @method
      * @static
      * @param {string} input
+     * @returns {boolean | string}
      */
     'requiredPrompt': function (input) {
-        // Declare function as asynchronous, and save the done callback
-        var done = this.async();
+        if (input === null || input === undefined || input === EMPTY_CHAR) {
+            return 'You need to provide something';
+        }
 
-        // Do async stuff
-        setTimeout(function() {
-            if (input === null || input === undefined || input === '') {
-                // Pass the return value in the done callback
-                done('You need to provide something');
-                return;
-            }
-            // Pass the return value in the done callback
-            done(true);
-        }, 3000);
+        return true;
     }
 };
