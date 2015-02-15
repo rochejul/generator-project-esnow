@@ -69,7 +69,8 @@ GeneratorModel.TRANSPILER_ENUM = {
  * @enum {string}
  */
 GeneratorModel.BUILD_SYSTEM_ENUM = {
-    'GRUNT': 'grunt'
+    'GRUNT': 'grunt',
+    'GULP': 'gulp'
 };
 
 /**

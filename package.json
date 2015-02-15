@@ -4,7 +4,7 @@
   "version": "0.0.2",
   "private": false,
   "scripts": {
-    "preinstall": "npm install -g grunt-cli bower",
+    "preinstall": "npm install -g grunt-cli gulp bower",
     "test": "mocha --recursive --verbose --ui bdd --colors test/*.js",
     "url": "https://github.com/rochejul"
   },
@@ -28,7 +28,8 @@
     "yeoman",
     "traceur",
     "6to5",
-    "grunt"
+    "grunt",
+    "gulp"
   ],
   "dependencies": {
     "lodash": "3.1.0",
@@ -37,7 +38,8 @@
   },
   "peerDependencies": {
     "yo": ">=1.0.0",
-    "grunt": ">=0.4.5"
+    "grunt": ">=0.4.5",
+    "gulp": "^3.8.11"
   },
   "devDependencies": {
     "mocha": "*",

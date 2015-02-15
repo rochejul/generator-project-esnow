@@ -156,6 +156,30 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     /**
+     * Called to ask the build system to use
+     *
+     * @method
+     */
+    'promptBuildSystem': function () {
+        var done = this.async();
+
+        this
+            .prompt(
+            {
+                'type': 'list',
+                'name': 'buildSystem',
+                'message': 'Choose the build system to use',
+                'default': this.model.buildSystem,
+                'choices': promptUtils.convertEnumToChoices(GeneratorProject.BUILD_SYSTEM_ENUM)
+            },
+            function (answers) {
+                this.model.buildSystem = answers.buildSystem;
+                done();
+            }.bind(this)
+        );
+    },
+
+    /**
      * Called to ask if we have to download the node and bower dependencies
      *
      * @method

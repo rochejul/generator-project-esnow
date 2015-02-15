@@ -18,7 +18,7 @@
         "README*",
         "karma.conf.js",
         "Gruntfile.js",
-        "gruntfile.js",
+        "gulpfile.js",
         "bower.json",
         "package.json"
     ]
