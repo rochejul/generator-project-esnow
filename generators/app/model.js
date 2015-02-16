@@ -60,6 +60,7 @@ function GeneratorModel (values) {
  * @enum {string}
  */
 GeneratorModel.TRANSPILER_ENUM = {
+    'BABEL': 'babel',
     'SIXTOFIVE': '6to5',
     'TRACEUR': 'traceur'
 };
