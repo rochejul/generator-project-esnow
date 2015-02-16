@@ -1,0 +1,44 @@
+{
+  "name": "grunt-traceur",
+  "description": "a sample project with grunt and traceur",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "preinstall": "npm install -g grunt-cli",
+    "test": "node node_modules/grunt-cli/bin/grunt tests"
+  },
+  "contributors": [
+  ],
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-cli": "~0.1.13",
+
+    "es6-module-loader": "0.11.2",
+    "systemjs": "0.11.3",
+    "traceur": "0.0.81",
+
+    "karma": "~0.12.0",
+    "karma-chrome-launcher": "~0.1.2",
+    "karma-phantomjs-launcher": "~0.1.2",
+    "karma-coverage": "~0.2.7",
+    "karma-jasmine": "~0.2.1",
+    "karma-junit-reporter": "~0.2.1",
+
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-concat": "~0.5.0",
+    "grunt-combine": "~0.8.3",
+    "grunt-contrib-uglify": "~0.7.0",
+    "grunt-karma": "~0.8.3",
+    "grunt-contrib-jshint": "~0.11.0",
+    "grunt-contrib-yuidoc": "~0.7.0",
+
+    "load-grunt-configs": "~0.4.0",
+    "load-grunt-tasks": "~0.4.0"
+  },
+  "license": "private",
+  "engines": {
+    "node": ">=0.10.33",
+    "npm": ">=1.4.28"
+  }
+}

@@ -1,0 +1,25 @@
+{
+    "name": "gulp-6to5",
+    "description": "a sample project with gulp and 6to5",
+    "version": "1.0.0",
+    "dependencies": {
+    },
+	"authors": [
+    ],
+    "license": "private",
+    "private": true,
+    "ignore": [
+        "node_modules",
+        "src/bower_components",
+        "config",
+        "test",
+        "target",
+        ".*",
+        "README*",
+        "karma.conf.js",
+        "Gruntfile.js",
+        "gulpfile.js",
+        "bower.json",
+        "package.json"
+    ]
+}
