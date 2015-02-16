@@ -6,10 +6,10 @@ Yeoman generator to create ES next generation project (based on ES6 / ES2015, ES
 Provide an easy way to set up a ES project based on ES6 / ES2015, ES7, etc ...
 
 We can generate a project based on:
-- Grunt
+- Grunt / Gulp
 - Karma & Jasmine
 - Bower
-- 6to5 / traceur
+- 6to5 / babel / traceur
 
 With basics tasks, such as:
 - running metrics (documentation, JavaScript hints)
