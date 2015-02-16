@@ -120,4 +120,42 @@ describe('generator tests - ', function () {
             });
         });
     });
+
+    describe('Check when we use the gulp build system ', function () {
+        describe('with 6to5 should ', function () {
+            before(function (done) {
+                helpers
+                    .run(path.join( __dirname, APP_PATH))
+                    .inDir(path.join( __dirname, TARGET_PATH))
+                    .withPrompts(new GeneratorModel({ 'buildSystem': GeneratorModel.BUILD_SYSTEM_ENUM.GULP }).toJSON())
+                    .on('end', done);
+            });
+
+            it('contains a gulpfile.js file', function () {
+                assert.file(['gulpfile.js', 'gulp-options.js']);
+            });
+
+            it('contains a dependency to 6to5', function () {
+                assert.fileContent('package.json', /(6to5)/g);
+            });
+        });
+
+        describe('with traceur should ', function () {
+            before(function (done) {
+                helpers
+                    .run(path.join( __dirname, APP_PATH))
+                    .inDir(path.join( __dirname, TARGET_PATH))
+                    .withPrompts(new GeneratorModel({ 'buildSystem': GeneratorModel.BUILD_SYSTEM_ENUM.GULP, 'transpiler': GeneratorModel.TRANSPILER_ENUM.TRACEUR }).toJSON())
+                    .on('end', done);
+            });
+
+            it('contains a gulpfile.js file', function () {
+                assert.file(['gulpfile.js', 'gulp-options.js']);
+            });
+
+            it('contains a dependency to traceur', function () {
+                assert.fileContent('package.json', /(traceur)/g);
+            });
+        });
+    });
 });

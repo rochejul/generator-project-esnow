@@ -17,11 +17,11 @@ module.exports = function(grunt, options){
         grunt.file.expand(['src/app/**/*.js']).forEach(function (file) {
             grunt.log.writeln('Compile with traceur: ' + file);
 
-            var filename = file.substr(4),
+            var filename = file.substr(4), // To be on the src folder
                 compiler = new traceur.NodeCompiler({
                     'experimental': true,
                     'modules': 'instantiate',
-                    'moduleName': filename.substr(0, filename.length - 3),
+                    'moduleName': filename.substr(0, filename.length - 3), // Remove the '.js' extension
                     'sourceMaps': 'inline'
                 });
 

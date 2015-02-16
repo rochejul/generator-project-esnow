@@ -14,13 +14,13 @@ var lodash = require('lodash'),
     runSequence = require('run-sequence');
 
 /**
- * Return a gulp pipe for the Karma proces
+ * Return a gulp pipe for the Karma process
  *
  * @method
  * @private
  * @returns {Function}
  */
-function karmaGulpStream(options) {
+function _karmaGulpStream(options) {
     return through2.obj(function (file, enc, cb) {
         var extendedOptions = lodash.extend({ }, options, { 'configFile': file.path });
 
@@ -51,7 +51,7 @@ gulp.task('tests:clean', function () {
 gulp.task('tests:karma', function () {
     return gulp
         .src([options.dirname + '/karma.conf.js'])
-        .pipe(karmaGulpStream({
+        .pipe(_karmaGulpStream({
             'runnerPort': 9999,
             'singleRun': true,
             'browsers': ['PhantomJS'],

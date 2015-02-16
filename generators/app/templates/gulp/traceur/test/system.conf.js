@@ -1,5 +1,5 @@
 /*jshint camelcase: false, -W083*/
-/*global System: true */
+/*global System: true, require: true */
 
 (function (karma) {
     'use strict';
