@@ -38,7 +38,7 @@ function GeneratorModel (values) {
     /**
      * @property {string} transpiler
      */
-    this.transpiler = GeneratorModel.TRANSPILER_ENUM.SIXTOFIVE;
+    this.transpiler = GeneratorModel.TRANSPILER_ENUM.BABEL;
 
     /**
      * @property {string} buildSystem

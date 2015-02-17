@@ -89,7 +89,7 @@ describe('generator tests - ', function () {
                 helpers
                     .run(path.join( __dirname, APP_PATH))
                     .inDir(path.join( __dirname, TARGET_PATH))
-                    .withPrompts(new GeneratorModel().toJSON())
+                    .withPrompts(new GeneratorModel({ 'transpiler': GeneratorModel.TRANSPILER_ENUM.SIXTOFIVE }).toJSON())
                     .on('end', done);
             });
 
@@ -145,7 +145,7 @@ describe('generator tests - ', function () {
                 helpers
                     .run(path.join( __dirname, APP_PATH))
                     .inDir(path.join( __dirname, TARGET_PATH))
-                    .withPrompts(new GeneratorModel({ 'buildSystem': GeneratorModel.BUILD_SYSTEM_ENUM.GULP }).toJSON())
+                    .withPrompts(new GeneratorModel({ 'buildSystem': GeneratorModel.BUILD_SYSTEM_ENUM.GULP, 'transpiler': GeneratorModel.TRANSPILER_ENUM.SIXTOFIVE }).toJSON())
                     .on('end', done);
             });
 

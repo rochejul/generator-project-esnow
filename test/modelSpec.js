@@ -25,7 +25,7 @@ describe('model tests - ', function () {
                 'projectName': 'esnow-project',
                 'projectDescription': null,
                 'projectVersion': '1.0.0',
-                'transpiler': GeneratorModel.TRANSPILER_ENUM.SIXTOFIVE,
+                'transpiler': GeneratorModel.TRANSPILER_ENUM.BABEL,
                 'buildSystem': GeneratorModel.BUILD_SYSTEM_ENUM.GRUNT,
                 'downloadDependencies': false
             });
@@ -78,7 +78,7 @@ describe('model tests - ', function () {
                 'projectName': 'esnow-project',
                 'projectDescription': null,
                 'projectVersion': '1.0.0',
-                'transpiler': GeneratorModel.TRANSPILER_ENUM.SIXTOFIVE,
+                'transpiler': GeneratorModel.TRANSPILER_ENUM.BABEL,
                 'buildSystem': GeneratorModel.BUILD_SYSTEM_ENUM.GRUNT,
                 'downloadDependencies': false
             });
