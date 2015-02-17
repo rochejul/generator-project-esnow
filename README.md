@@ -67,7 +67,7 @@ Version of the project. Based on the semver convention. See https://docs.npmjs.c
 Type: `String`
 Default: `6to5`
 
-ES transpiler. Choices between 6to5 and traceur
+ES transpiler. Choices between 6to5, babel and traceur
 
 ### prompts.downloadDependencies
 Type: `Boolean`
