@@ -1,7 +1,7 @@
 /*global module: true */
 
 /**
- * Module that contains the model
+ * Module that contains the main model (or generator model)
  */
 
 'use strict';
@@ -75,7 +75,7 @@ GeneratorModel.BUILD_SYSTEM_ENUM = {
 };
 
 /**
- * Return a JSON objerct to represent the model
+ * Return a JSON object to represent the model
  *
  * @method
  * @returns {Object}

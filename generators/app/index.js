@@ -11,7 +11,9 @@ var
     yeoman = require('yeoman-generator'),
     messageUtils = require('./services/messages'),
     promptUtils = require('./services/prompt'),
-    GeneratorProject = require('./model');
+    transpilerUtils = require('./services/transpiler'),
+    GeneratorProject = require('./model'),
+    TranspilerModel = require('./transpiler');
 
 var
     // Constants
@@ -34,6 +36,7 @@ module.exports = yeoman.generators.Base.extend({
         this.log('Welcome to the EsNow generator for your project');
         this.log();
         this.model = new GeneratorProject();
+        this.transpiler = null;
     },
 
     /**
@@ -218,6 +221,11 @@ module.exports = yeoman.generators.Base.extend({
             rootFolder = this.model.projectName;
             this.dest.mkdir(rootFolder);
         }
+
+        // Update some models
+        this.transpiler = new TranspilerModel({
+            'npmDependencies': transpilerUtils.getNpmDependencies(this.model.transpiler, this.model.buildSystem)
+        });
 
         // Copy all needed files
         this.directory('./base', rootFolder);
