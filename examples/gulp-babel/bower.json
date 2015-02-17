@@ -1,6 +1,6 @@
 {
     "name": "gulp-babel",
-    "description": "a sample project with gulp and babel",
+    "description": "a sample project with babel and gulp",
     "version": "1.0.0",
     "dependencies": {
     },

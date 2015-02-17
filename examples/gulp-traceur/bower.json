@@ -1,6 +1,6 @@
 {
     "name": "gulp-traceur",
-    "description": "a sample project with gulp and traceur",
+    "description": "a sample project with traceur and gulp",
     "version": "1.0.0",
     "dependencies": {
     },

@@ -1,6 +1,6 @@
 {
   "name": "grunt-traceur",
-  "description": "a sample project with grunt and traceur",
+  "description": "a sample project with traceur and grunt",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -15,7 +15,6 @@
 
     "es6-module-loader": "0.11.2",
     "systemjs": "0.11.3",
-    "traceur": "0.0.81",
 
     "karma": "~0.12.0",
     "karma-chrome-launcher": "~0.1.2",
@@ -34,7 +33,9 @@
     "grunt-contrib-yuidoc": "~0.7.0",
 
     "load-grunt-configs": "~0.4.0",
-    "load-grunt-tasks": "~0.4.0"
+    "load-grunt-tasks": "~0.4.0",
+
+    "traceur": "0.0.81"
   },
   "license": "private",
   "engines": {

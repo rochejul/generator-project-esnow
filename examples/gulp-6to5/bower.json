@@ -1,6 +1,6 @@
 {
     "name": "gulp-6to5",
-    "description": "a sample project with gulp and 6to5",
+    "description": "a sample project with 6to5 and gulp",
     "version": "1.0.0",
     "dependencies": {
     },

@@ -1,6 +1,6 @@
 {
     "name": "grunt-6to5",
-    "description": "a sample project with grunt and 6to5",
+    "description": "a sample project with 6to5 and grunt",
     "version": "1.0.0",
     "dependencies": {
     },

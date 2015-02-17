@@ -1,6 +1,6 @@
 {
     "name": "grunt-babel",
-    "description": "a sample project with grunt and babel",
+    "description": "a sample project with babel and grunt",
     "version": "1.0.0",
     "dependencies": {
     },
