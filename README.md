@@ -75,6 +75,13 @@ Default: `false`
 
 Shall we download at the end of the generation the npm and bower dependencies of the project ?
 
+## Project commands
+
+* Run tests: ```sh npm test ```
+* Run compilation: ```sh npm run compile ```
+* Run distribution: ```sh npm run dist ```
+* Run reports: ```sh npm run report ```
+
 ## License
 
 MIT © [Julien Roche](https://github.com/rochejul)

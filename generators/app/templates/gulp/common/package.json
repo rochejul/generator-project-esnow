@@ -5,6 +5,9 @@
   "private": true,
   "scripts": {
     "preinstall": "npm install -g gulp",
+    "compile": "node node_modules/gulp/bin/gulp.js compile",
+    "dist": "node node_modules/gulp/bin/gulp.js dist",
+    "report": "node node_modules/gulp/bin/gulp.js reports",
     "test": "node node_modules/gulp/bin/gulp.js tests"
   },
   "contributors": [
