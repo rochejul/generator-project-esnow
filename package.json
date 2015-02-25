@@ -1,7 +1,7 @@
 {
   "name": "generator-project-esnow",
   "description": "Yeoman generator to create ES next generation project (based on ES6 / ES2015, ES7 ...)",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": false,
   "scripts": {
     "preinstall": "npm install -g grunt-cli gulp bower",
@@ -35,7 +35,7 @@
   "dependencies": {
     "lodash": "3.1.0",
     "semver": "^4.3.0",
-    "yeoman-generator": "^0.18.5"
+    "yeoman-generator": "0.18.5"
   },
   "peerDependencies": {
     "yo": ">=1.0.0",
