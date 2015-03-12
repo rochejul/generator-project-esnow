@@ -9,6 +9,7 @@
 var
     // Import dependencies
     yeoman = require('yeoman-generator'),
+    packageJSON = require('../../package.json'),
     messageUtils = require('./services/messages'),
     promptUtils = require('./services/prompt'),
     transpilerUtils = require('./services/transpiler'),
@@ -33,7 +34,7 @@ module.exports = yeoman.generators.Base.extend({
         this.log(messageUtils.getDotLogMessage());
         this.log();
 
-        this.log('Welcome to the EsNow generator for your project');
+        this.log('Welcome to the EsNow generator for your project (current version:', packageJSON.version, ')');
         this.log();
         this.model = new GeneratorProject();
         this.transpiler = null;
