@@ -41,7 +41,7 @@ gulp.task('compile:babel', function () {
     return gulp
         .src([ 'app/**/*.js' ], { 'cwd': options.srcFolderPath })
         .pipe(sourcemaps.init())
-        .pipe(to5({
+        .pipe(babel({
             'keepModuleIdExtensions': false,
             'modules': 'system'
         }))
