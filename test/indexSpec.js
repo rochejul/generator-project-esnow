@@ -84,6 +84,24 @@ describe('generator tests - ', function () {
     });
 
     describe('Check when we use the grunt build system ', function () {
+        describe('with default transpiler should ', function () {
+            before(function (done) {
+                helpers
+                    .run(path.join( __dirname, APP_PATH))
+                    .inDir(path.join( __dirname, TARGET_PATH))
+                    .withPrompts(new GeneratorModel().toJSON())
+                    .on('end', done);
+            });
+
+            it('contains a Gruntfile.js file', function () {
+                assert.file(['Gruntfile.js']);
+            });
+
+            it('contains a dependency to babel', function () {
+                assert.fileContent('package.json', /(babel)/g);
+            });
+        });
+
         describe('with 6to5 should ', function () {
             before(function (done) {
                 helpers
@@ -140,6 +158,24 @@ describe('generator tests - ', function () {
     });
 
     describe('Check when we use the gulp build system ', function () {
+        describe('with default transpiler should ', function () {
+            before(function (done) {
+                helpers
+                    .run(path.join( __dirname, APP_PATH))
+                    .inDir(path.join( __dirname, TARGET_PATH))
+                    .withPrompts(new GeneratorModel({ 'buildSystem': GeneratorModel.BUILD_SYSTEM_ENUM.GULP, 'transpiler': GeneratorModel.TRANSPILER_ENUM.BABEL }).toJSON())
+                    .on('end', done);
+            });
+
+            it('contains a gulpfile.js file', function () {
+                assert.file(['gulpfile.js', 'gulp-options.js']);
+            });
+
+            it('contains a dependency to babel', function () {
+                assert.fileContent('package.json', /(babel)/g);
+            });
+        });
+
         describe('with 6to5 should ', function () {
             before(function (done) {
                 helpers
