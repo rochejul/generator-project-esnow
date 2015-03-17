@@ -1,4 +1,8 @@
-# generator-project-esnow [![Build Status](https://travis-ci.org/rochejul/generator-project-esnow.svg?branch=master)](https://travis-ci.org/rochejul/generator-project-esnow)
+[![Build Status](https://travis-ci.org/rochejul/generator-project-esnow.svg?branch=master)](https://travis-ci.org/rochejul/generator-project-esnow)
+[![Dependency Status](https://david-dm.org/rochejul/generator-project-esnow.svg)](https://david-dm.org/rochejul/generator-project-esnow)
+[![devDependency Status](https://david-dm.org/rochejul/generator-project-esnow/dev-status.svg)](https://david-dm.org/rochejul/generator-project-esnow#info=devDependencies)
+
+# generator-project-esnow
 Yeoman generator to create ES next generation project (based on ES6 / ES2015, ES7 ...).
 
 ## Goal
