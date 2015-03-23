@@ -1,0 +1,11 @@
+var eslint = require('gulp-eslint'),
+    fs = require('fs');
+
+gulp.task('reports:eslint', function () {
+    return gulp
+        .src(options.srcFolderPath + '/app/**/*.js')
+        .pipe(eslint({ 'useEslintrc': true }))
+        .pipe(eslint.format('checkstyle', function (output) {
+            fs.writeFileSync(options.targetFolderPath + '/report-eslint-checkstyle.xml', output);
+        }));
+});

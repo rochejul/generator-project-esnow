@@ -1,0 +1,12 @@
+            // JsHint part
+            'jshint': {
+                'options': {
+                    'force': true,
+                    'reporter': 'checkstyle',
+                    'reporterOutput': options.targetFolderPath + '/report-jshint-checkstyle.xml',
+                    'jshintrc': true // See https://github.com/jshint/jshint/blob/master/examples/.jshintrc
+                },
+                'reports': {
+                    'src': [options.srcFolderPath + '/**/*.js', '!' + options.srcFolderPath + '/bower_components/**/*']
+                }
+            }

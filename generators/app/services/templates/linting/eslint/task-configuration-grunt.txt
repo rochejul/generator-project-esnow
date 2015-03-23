@@ -1,0 +1,12 @@
+            // EsLint part
+            'eslint': {
+                'options': {
+                    'force': true,
+                    'format': 'checkstyle',
+                    'outputFile': options.targetFolderPath + '/report-eslint-checkstyle.xml',
+                    'useEslintrc': true
+                },
+                'reports': {
+                    'src': [options.srcFolderPath + '/**/*.js', '!' + options.srcFolderPath + '/bower_components/**/*']
+                }
+            }

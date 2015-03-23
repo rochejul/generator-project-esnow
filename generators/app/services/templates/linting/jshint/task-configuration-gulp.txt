@@ -1,0 +1,13 @@
+var jshint = require('gulp-jshint'),
+    jshintXMLReporter = require('gulp-jshint-xml-file-reporter');
+
+gulp.task('reports:jshint', function () {
+    return gulp
+        .src(options.srcFolderPath + '/app/**/*.js')
+        .pipe(jshint({ 'lookup': true }))
+        .pipe(jshint.reporter(jshintXMLReporter))
+        .on('end', jshintXMLReporter.writeFile({
+            'format': 'checkstyle',
+            'filePath': options.targetFolderPath + '/report-jshint-checkstyle.xml'
+        }));
+});

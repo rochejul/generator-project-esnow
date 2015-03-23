@@ -24,7 +24,7 @@ var
      * @private
      * @enum {string}
      */
-    NPM_DEPENDECIES_FILENAME = 'npm-dependencies-',
+    NPM_DEPENDENCIES_FILENAME = 'npm-dependencies-',
 
     /**
      * File text extension
@@ -46,6 +46,6 @@ module.exports = {
      * @returns {string}
      */
     'getNpmDependencies': function (transpiler, buildSystem) {
-        return fs.readFileSync(TEMPLATES_PATH + transpiler + path.sep + NPM_DEPENDECIES_FILENAME + buildSystem + TXT_EXTENSION).toString();
+        return fs.readFileSync(TEMPLATES_PATH + transpiler + path.sep + NPM_DEPENDENCIES_FILENAME + buildSystem + TXT_EXTENSION).toString();
     }
 };

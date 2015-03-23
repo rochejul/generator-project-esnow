@@ -35,8 +35,7 @@
     "gulp-copy2": "~0.2.0",
     "gulp-replace": "~0.5.2",
     "gulp-uglify": "~1.1.0",
-    "gulp-jshint-xml-file-reporter": "~0.3.3",
-    "gulp-jshint": "~1.9.2",
+<%= linting.npmDependencies %>
     "gulp-yuidoc": "~0.1.2",
 
     "gulp-load-tasks": "~0.8.3",

@@ -29,7 +29,7 @@ module.exports = function (grunt) {
     grunt.registerTask('reports', [
         'clean:reports',
         'yuidoc:reports',
-        'jshint:reports'
+        '<%= model.linting %>:reports'
     ]);
 
     // Task for the tests

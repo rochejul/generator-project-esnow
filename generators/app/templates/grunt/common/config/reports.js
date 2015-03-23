@@ -9,7 +9,7 @@ module.exports = function (grunt, options) {
         'tasks': {
             'clean': {
                 'reports': {
-                    'src': [options.targetFolderPath + '/yuidoc', options.targetFolderPath + '/report-jshint-checkstyle.xml']
+                    'src': [options.targetFolderPath + '/yuidoc', options.targetFolderPath + '/report-jshint-<%= model.linting %>.xml']
                 }
             },
 
@@ -26,18 +26,7 @@ module.exports = function (grunt, options) {
                 }
             },
 
-            // JsHint part
-            'jshint': {
-                'options': {
-                    'force': true,
-                    'reporter': 'checkstyle',
-                    'reporterOutput': options.targetFolderPath + '/report-jshint-checkstyle.xml',
-                    'jshintrc': true // See https://github.com/jshint/jshint/blob/master/examples/.jshintrc
-                },
-                'reports': {
-                    'src': [options.srcFolderPath + '/**/*.js', '!' + options.srcFolderPath + '/bower_components/**/*']
-                }
-            }
+<%= linting.taskConfiguration %>
         }
     };
 };

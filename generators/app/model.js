@@ -41,6 +41,11 @@ function GeneratorModel (values) {
     this.transpiler = GeneratorModel.TRANSPILER_ENUM.BABEL;
 
     /**
+     * @property {string} linting
+     */
+    this.linting = GeneratorModel.LINTING_ENUM.ESLINT;
+
+    /**
      * @property {string} buildSystem
      */
     this.buildSystem = GeneratorModel.BUILD_SYSTEM_ENUM.GRUNT;
@@ -72,6 +77,15 @@ GeneratorModel.TRANSPILER_ENUM = {
 GeneratorModel.BUILD_SYSTEM_ENUM = {
     'GRUNT': 'grunt',
     'GULP': 'gulp'
+};
+
+/**
+ * @name LintingEnum
+ * @enum {string}
+ */
+GeneratorModel.LINTING_ENUM = {
+    'ESLINT': 'eslint',
+    'JSHINT': 'jshint'
 };
 
 /**

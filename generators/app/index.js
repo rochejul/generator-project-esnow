@@ -12,8 +12,10 @@ var
     packageJSON = require('../../package.json'),
     messageUtils = require('./services/messages'),
     promptUtils = require('./services/prompt'),
+    lintingUtils = require('./services/linting'),
     transpilerUtils = require('./services/transpiler'),
     GeneratorProject = require('./model'),
+    LintingModel = require('./linting'),
     TranspilerModel = require('./transpiler');
 
 var
@@ -38,6 +40,7 @@ module.exports = yeoman.generators.Base.extend({
         this.log();
         this.model = new GeneratorProject();
         this.transpiler = null;
+        this.linting = null;
     },
 
     /**
@@ -184,6 +187,30 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     /**
+     * Called to ask the linting to use
+     *
+     * @method
+     */
+    'promptLinting': function () {
+        var done = this.async();
+
+        this
+            .prompt(
+            {
+                'type': 'list',
+                'name': 'linting',
+                'message': 'Choose the linting to use',
+                'default': this.model.linting,
+                'choices': promptUtils.convertEnumToChoices(GeneratorProject.LINTING_ENUM)
+            },
+            function (answers) {
+                this.model.linting = answers.linting;
+                done();
+            }.bind(this)
+        );
+    },
+
+    /**
      * Called to ask if we have to download the node and bower dependencies
      *
      * @method
@@ -228,8 +255,14 @@ module.exports = yeoman.generators.Base.extend({
             'npmDependencies': transpilerUtils.getNpmDependencies(this.model.transpiler, this.model.buildSystem)
         });
 
+        this.linting = new LintingModel({
+            'npmDependencies': lintingUtils.getNpmDependencies(this.model.linting, this.model.buildSystem),
+            'taskConfiguration': lintingUtils.getTaskConfiguration(this.model.linting, this.model.buildSystem)
+        });
+
         // Copy all needed files
         this.directory('./base', rootFolder);
+        this.copy('./linting/.' + this.model.linting + 'rc', rootFolder + '/.' + this.model.linting + 'rc');
         this.directory('./' + this.model.buildSystem + '/common', rootFolder);
         this.directory('./' + this.model.buildSystem + '/' + this.model.transpiler, rootFolder);
     },
