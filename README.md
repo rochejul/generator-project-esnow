@@ -14,6 +14,7 @@ We can generate a project based on:
 - Karma & Jasmine
 - Bower
 - 6to5 / babel / traceur
+- Eslint / JsHint
 
 With basics tasks, such as:
 - running metrics (documentation, JavaScript hints)
@@ -69,9 +70,15 @@ Version of the project. Based on the semver convention. See https://docs.npmjs.c
 
 ### prompts.transpiler
 Type: `String`
-Default: `6to5`
+Default: `babel`
 
 ES transpiler. Choices between 6to5, babel and traceur
+
+### prompts.linting
+Type: `String`
+Default: `eslint`
+
+ES linting. Choices between eslint and jshint
 
 ### prompts.downloadDependencies
 Type: `Boolean`
