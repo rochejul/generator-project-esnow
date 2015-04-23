@@ -8,7 +8,9 @@
     "compile": "node node_modules/grunt-cli/bin/grunt compile",
     "dist": "node node_modules/grunt-cli/bin/grunt dist",
     "report": "node node_modules/grunt-cli/bin/grunt reports",
-    "test": "node node_modules/grunt-cli/bin/grunt tests"
+    "test": "node node_modules/grunt-cli/bin/grunt tests",
+    "bower": "node node_modules/bower/bin/bower",
+    "grunt": "node node_modules/grunt/lib/grunt.js"
   },
   "contributors": [
   ],

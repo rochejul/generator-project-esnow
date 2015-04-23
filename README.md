@@ -93,6 +93,24 @@ Shall we download at the end of the generation the npm and bower dependencies of
 * Run distribution: ```sh npm run dist ```
 * Run reports: ```sh npm run report ```
 
+If you want to run bower commands:
+
+* ```sh npm run bower install ```
+* ```sh npm run bower prune ```
+* ...
+
+If you want to run gulp commands if you are in a gulp project:
+
+* ```sh npm run gulp compile ```
+* ```sh npm run gulp dist ```
+* ...
+
+If you want to run grunt commands if you are in a grunt project:
+
+* ```sh npm run grunt compile ```
+* ```sh npm run grunt dist ```
+* ...
+
 ## License
 
 MIT © [Julien Roche](https://github.com/rochejul)
