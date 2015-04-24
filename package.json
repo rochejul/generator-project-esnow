@@ -6,7 +6,7 @@
   "scripts": {
     "preinstall": "npm install -g grunt-cli gulp bower",
     "test": "mocha --recursive --verbose --ui bdd --colors test/*.js",
-    "url": "https://github.com/rochejul"
+    "shrinkwrap": "npm shrinkwrap --dev"
   },
   "contributors": [
     {
@@ -14,6 +14,7 @@
       "email": "roche.jul@gmail.com"
     }
   ],
+  "url": "https://github.com/rochejul",
   "repository": "rochejul/generator-project-esnow",
   "main": "generators/app/index.js",
   "files": [
@@ -34,7 +35,7 @@
   ],
   "dependencies": {
     "lodash": "3.1.0",
-    "semver": "^4.3.0",
+    "semver": "4.3.2",
     "yeoman-generator": "0.18.5"
   },
   "peerDependencies": {
