@@ -8,6 +8,7 @@
 
 var
     fs = require('fs'),
+    Constant = require('node-const'),
 
     /**
      * File caching
@@ -20,6 +21,8 @@ var
         'END': fs.readFileSync(__dirname + '/../messages/end.txt').toString(),
         'START': fs.readFileSync(__dirname + '/../messages/start.txt').toString()
     };
+
+Constant(CACHE_FILE_CONTENTS);
 
 // Export the service
 module.exports = {

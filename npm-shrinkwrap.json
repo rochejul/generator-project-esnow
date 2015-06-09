@@ -1130,6 +1130,11 @@
         }
       }
     },
+    "node-const": {
+      "version": "0.2.1",
+      "from": "node-const@*",
+      "resolved": "https://registry.npmjs.org/node-const/-/node-const-0.2.1.tgz"
+    },
     "semver": {
       "version": "4.3.2",
       "from": "semver@4.3.2",

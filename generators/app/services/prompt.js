@@ -98,7 +98,7 @@ module.exports = {
      * @returns {boolean | string}
      */
     'semverPrompt': function (input) {
-        if (semver.valid(input)) {
+        if (input && semver.valid(input)) {
             return true;
         }
 

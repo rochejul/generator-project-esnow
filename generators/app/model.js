@@ -7,7 +7,8 @@
 'use strict';
 
 var
-    _ = require('lodash');
+    _ = require('lodash'),
+    Constant = require('node-const');
 
 /**
  * @class GeneratorModel
@@ -70,6 +71,8 @@ GeneratorModel.TRANSPILER_ENUM = {
     'TRACEUR': 'traceur'
 };
 
+Constant(GeneratorModel.TRANSPILER_ENUM);
+
 /**
  * @name BuildSystemEnum
  * @enum {string}
@@ -79,6 +82,8 @@ GeneratorModel.BUILD_SYSTEM_ENUM = {
     'GULP': 'gulp'
 };
 
+Constant(GeneratorModel.BUILD_SYSTEM_ENUM);
+
 /**
  * @name LintingEnum
  * @enum {string}
@@ -87,6 +92,8 @@ GeneratorModel.LINTING_ENUM = {
     'ESLINT': 'eslint',
     'JSHINT': 'jshint'
 };
+
+Constant(GeneratorModel.LINTING_ENUM);
 
 /**
  * Return a JSON object to represent the model
