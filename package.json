@@ -5,7 +5,7 @@
   "private": false,
   "scripts": {
     "preinstall": "npm install -g grunt-cli gulp bower",
-    "test": "mocha --recursive --verbose --ui bdd --colors test/*.js",
+    "test": "node ./node_modules/mocha/bin/mocha --recursive --verbose --ui bdd --colors test/*.js",
     "shrinkwrap": "npm shrinkwrap --dev"
   },
   "contributors": [
