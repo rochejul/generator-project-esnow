@@ -86,6 +86,12 @@ Default: `false`
 
 Shall we download at the end of the generation the npm and bower dependencies of the project ?
 
+### prompts.git
+Type: `Boolean`
+Default: `true`
+
+Shall we generate some git files for the project ?
+
 ## Project commands
 
 * Run tests: ```sh npm test ```

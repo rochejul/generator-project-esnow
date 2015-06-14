@@ -234,6 +234,29 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     /**
+     * Called to ask if we have to add git or not
+     *
+     * @method
+     */
+    'promptGit': function () {
+        var done = this.async();
+
+        this
+            .prompt(
+            {
+                'type': 'confirm',
+                'name': 'git',
+                'message': 'Do you use Git?',
+                'default': this.model.git
+            },
+            function (answers) {
+                this.model.git = answers.git;
+                done();
+            }.bind(this)
+        );
+    },
+
+    /**
      * Copy files
      *
      * @method
@@ -263,8 +286,13 @@ module.exports = yeoman.generators.Base.extend({
         // Copy all needed files
         this.directory('./base', rootFolder);
         this.copy('./linting/.' + this.model.linting + 'rc', rootFolder + '/.' + this.model.linting + 'rc');
+
         this.directory('./' + this.model.buildSystem + '/common', rootFolder);
         this.directory('./' + this.model.buildSystem + '/' + this.model.transpiler, rootFolder);
+
+        if (this.model.git) {
+            this.directory('./git', rootFolder);
+        }
     },
 
     /**

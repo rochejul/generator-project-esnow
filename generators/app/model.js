@@ -47,6 +47,11 @@ function GeneratorModel (values) {
     this.linting = GeneratorModel.LINTING_ENUM.ESLINT;
 
     /**
+     * @property {boolean} git
+     */
+    this.git = true;
+
+    /**
      * @property {string} buildSystem
      */
     this.buildSystem = GeneratorModel.BUILD_SYSTEM_ENUM.GRUNT;

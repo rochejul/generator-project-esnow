@@ -53,6 +53,22 @@ describe('generator tests - ', function () {
         });
     });
 
+    describe('and with the option "--more-options", ', function () {
+       describe.only('for git files ', function () {
+           before(function (done) {
+               helpers
+                   .run(path.join( __dirname, APP_PATH))
+                   .inDir(path.join( __dirname, TARGET_PATH))
+                   .withPrompts(new GeneratorModel({ 'git': false }).toJSON())
+                   .on('end', done);
+           });
+
+           it('avoid to copy these into the folder', function () {
+               assert.noFile(['esnow-project/.gitattributes', 'esnow-project/.gitignore']);
+           });
+       });
+    });
+
     describe('and the option "createProjectFolder" ', function () {
         describe('with the value to false should ', function () {
             before(function (done) {
