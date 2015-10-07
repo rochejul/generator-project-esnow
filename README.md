@@ -2,6 +2,9 @@
 [![Dependency Status](https://david-dm.org/rochejul/generator-project-esnow.svg)](https://david-dm.org/rochejul/generator-project-esnow)
 [![devDependency Status](https://david-dm.org/rochejul/generator-project-esnow/dev-status.svg)](https://david-dm.org/rochejul/generator-project-esnow#info=devDependencies)
 
+[![NPM](https://nodei.co/npm/generator-project-esnow.png?downloads=true&downloadRank=true)](https://nodei.co/npm/generator-project-esnow/)
+[![NPM](https://nodei.co/npm-dl/generator-project-esnow.png?&months=6&height=3)](https://nodei.co/npm/generator-project-esnow/)
+
 # generator-project-esnow
 Yeoman generator to create ES next generation project (based on ES6 / ES2015, ES7 ...).
 
